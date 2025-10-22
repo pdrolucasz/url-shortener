@@ -5,7 +5,7 @@ class CreateLinks < ActiveRecord::Migration[8.0]
             t.string :short_url, null: false, index: true
             t.string :original_url, null: false, index: true
             t.integer :click_count, default: 0
-            t.datetime :expiration_date
+            t.datetime :expires_at
 
             t.timestamps
         end

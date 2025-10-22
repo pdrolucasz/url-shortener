@@ -10,20 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_10_20_183728) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_22_025106) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "link_metrics", force: :cascade do |t|
+    t.bigint "link_id"
+    t.string "ip_address"
+    t.string "user_agent"
+    t.datetime "access_in"
+    t.index ["link_id"], name: "index_link_metrics_on_link_id"
+  end
 
   create_table "links", force: :cascade do |t|
     t.string "short_code", null: false
     t.string "short_url", null: false
     t.string "original_url", null: false
     t.integer "click_count", default: 0
-    t.datetime "expiration_date"
+    t.datetime "expires_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["original_url"], name: "index_links_on_original_url"
     t.index ["short_code"], name: "index_links_on_short_code"
     t.index ["short_url"], name: "index_links_on_short_url"
   end
+
+  add_foreign_key "link_metrics", "links"
 end

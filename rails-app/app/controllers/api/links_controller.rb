@@ -1,4 +1,5 @@
-class LinksController < ApplicationController
+module Api
+    class LinksController < ApplicationController
     include Base62Converter
     before_action :set_link, only: %i[ destroy ]
 
@@ -24,7 +25,7 @@ class LinksController < ApplicationController
     end
 
     def destroy
-      @link.destroy()
+        @link.destroy()
     end
 
     private
@@ -34,4 +35,5 @@ class LinksController < ApplicationController
         def link_params
             params.expect(link: [ :original_url, :expiration_date ])
         end
+    end
 end
