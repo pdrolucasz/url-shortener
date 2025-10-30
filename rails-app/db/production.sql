@@ -1,0 +1,1 @@
+CREATE DATABASE rails_app_production;
