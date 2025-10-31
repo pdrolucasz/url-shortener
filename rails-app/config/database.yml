@@ -19,6 +19,7 @@ default: &default
   username: <%= ENV["POSTGRES_USER"] %>
   password: <%= ENV["POSTGRES_PASSWORD"] %>
   host: <%= ENV["POSTGRES_HOST"] %>
+  port: <%= ENV["POSTGRES_PORT"] %>
 
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -27,7 +28,6 @@ default: &default
 
 development:
   <<: *default
-  port: <%= ENV["POSTGRES_PORT"] %>
   database: url_shortener_development
 
   # The specified database role being used to connect to PostgreSQL.
