@@ -1,1 +1,4 @@
 CREATE DATABASE rails_app_production;
+CREATE DATABASE rails_app_production_cache;
+CREATE DATABASE rails_app_production_queue;
+CREATE DATABASE rails_app_production_cable;
