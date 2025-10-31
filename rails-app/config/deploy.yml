@@ -106,7 +106,7 @@ accessories:
     env:
       clear:
         POSTGRES_USER: POSTGRES_USER
-        POSTGRES_DB: "rails_app_production"
+        POSTGRES_DB: "url_shortener_production"
         DB_HOST: POSTGRES_HOST
         DB_PORT: POSTGRES_PORT
       secret:
@@ -114,8 +114,8 @@ accessories:
     files:
       # - config/mysql/production.cnf:/etc/mysql/my.cnf
       - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
-    # directories:
-    #   - data:/var/lib/postgresql/data
+    directories:
+      - data:/var/lib/postgresql/data
 #   redis:
 #     image: redis:7.0
 #     host: 192.168.0.2

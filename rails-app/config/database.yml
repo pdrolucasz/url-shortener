@@ -88,8 +88,7 @@ production:
     <<: *default
     url: <%= ENV["DATABASE_URL"] %>
     database: url_shortener_production
-    # username: rails_app
-    # password: <%= ENV["RAILS_APP_DATABASE_PASSWORD"] %>
+    password: <%= ENV["RAILS_APP_DATABASE_PASSWORD"] %>
   # cache:
   #   <<: *primary_production
   #   database: rails_app_production_cache
