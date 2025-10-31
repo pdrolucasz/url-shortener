@@ -87,7 +87,6 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    url: <%= ENV["DATABASE_URL"] %>
     database: url_shortener_production
   cache:
     <<: *primary_production
