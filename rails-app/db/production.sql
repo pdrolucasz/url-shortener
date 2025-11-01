@@ -1,4 +1,4 @@
-CREATE DATABASE rails_app_production;
-CREATE DATABASE rails_app_production_cache;
-CREATE DATABASE rails_app_production_queue;
-CREATE DATABASE rails_app_production_cable;
+CREATE DATABASE url_shortener_production;
+CREATE DATABASE url_shortener_production_cache;
+CREATE DATABASE url_shortener_production_queue;
+CREATE DATABASE url_shortener_production_cable;;
