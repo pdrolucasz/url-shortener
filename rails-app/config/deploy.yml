@@ -7,7 +7,7 @@ image: pdrolucasz/url_shortener
 # Deploy to these servers.
 servers:
   web:
-    - test.pdrolucasz.site
+    - demo.pdrolucasz.site
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -38,7 +38,6 @@ env:
     - DOMAIN
     - POSTGRES_USER
     - POSTGRES_HOST
-    - POSTGRES_PORT
     - POSTGRES_PASSWORD
   clear:
     # Run the Solid Queue Supervisor inside the web server's Puma process to do jobs.
@@ -100,7 +99,7 @@ builder:
 accessories:
   db:
     image: postgres:alpine
-    host: test.pdrolucasz.site
+    host: demo.pdrolucasz.site
     # Change to 3306 to expose port to the world instead of just local network.
     port: "127.0.0.1:5432:5432"
     env:
